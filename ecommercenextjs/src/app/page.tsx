@@ -1,20 +1,33 @@
 "use client";
 
-import Image from "next/image";
-import Navbar from "./sharedcomponents/Navbar";
+import Header from "./sharedcomponents/Navbar";
 import Footer from "./sharedcomponents/Footer";
-import Button from "./sharedcomponents/Buttons";
+import HeroSection from "./home/Exclusive";
+import Categories from "./home/Categories";
+import BestSelling from "./home/BestSelling";
+import PromoBanner from "./home/BrowseByCategories";
+import NewArrival from "./home/NewArrivals";
+import Services from "./home/Services";
+import { ArrowUp } from "lucide-react";
+import { FlashSales } from "./home/FlashSales";
+import ExploreProducts from "./home/ExploreProducts";
 
-export default function Home() {
+export default function Index() {
   return (
     <div>
-      <Navbar />
+      <Header />
+        <HeroSection />
+        <FlashSales/>
+        <Categories />
+        <BestSelling />
+        <PromoBanner />
+        <ExploreProducts/>
+        <NewArrival/>
+        <Services />
+        <button className="fixed bottom-8 right-8 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-exclusive-red hover:text-white transition-colors">
+          <ArrowUp className="w-5 h-5" />
+        </button>
       <Footer />
-      <Button
-        buttonText="Click Me"
-        variant="primary"
-        onclickHandler={() => alert('Button clicked successfully!!')}
-      />
     </div>
   );
 }
